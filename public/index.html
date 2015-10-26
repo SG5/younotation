@@ -27,51 +27,16 @@
     </div>
 </nav>
 
-<div class="container" ng-controller="mainController as main">
-    <!-- Example row of columns -->
-    <div class="row">
-        <div class="col-md-5">
-            <h3>Массовые аннотации</h3>
-            <p>Для массовых аннотаций необходимо произвести первоначальную настройку</p>
-        </div>
-        <div class="col-md-7">
-            <form>
-                <div class="form-group">
-                    <label>Имя пользователя или канал</label>
-                    <input ng-model="main.channelUrl"
-                            class="form-control" placeholder="https://www.youtube.com/user/konoden">
-                </div>
-                <button type="button" class="btn btn-success" ng-click="main.loadPlayLists()">Загрузить данные</button>
-            </form>
-        </div>
-    </div>
-
-    <div ng-show="main.playLists.length" class="ng-hide">
-        <hr>
-        <h5>Выбрать плейлист</h5>
-        <div class="row">
-
-            <div ng-repeat="playlist in main.playLists track by playlist.id" class="col-md-3">
-                <div class="thumbnail">
-                    <a ng-href="https://www.youtube.com/playlist?list={{playlist.id}}" target="_blank">
-                        <img ng-src="{{playlist.snippet.thumbnails.medium.url}}">
-                    </a>
-                    <div class="caption">
-                        <h6 ng-bind="::playlist.snippet.title"></h6>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
+<div ng-view></div>
 
 <script src="/library/jquery/dist/jquery.min.js"></script>
-<script src="/library/angular/angular.min.js"></script>
+<script src="/library/angular/angular.js"></script>
+<script src="/library/angular-route/angular-route.js"></script>
 
 <script src="/js/app.module.js"></script>
 <script src="/js/youtubeService.js"></script>
-<script src="/js/main.controller.js"></script>
+<script src="/js/main/main.controller.js"></script>
+<script src="/js/playlist/playlist.controller.js"></script>
 
 </body>
 </html>
