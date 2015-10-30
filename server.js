@@ -9,7 +9,7 @@ router.get("/hello", function(request, response) {
     response.end("Hello, World!");
 });
 
-router.get("/hello", function(request, response) {
+router.get("/", function(request, response) {
     request.addListener('end', function () {
         file.serve(request, response);
     }).resume();

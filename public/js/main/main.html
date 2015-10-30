@@ -1,5 +1,4 @@
-<div class="container" ng-controller="mainController as main">
-    <!-- Example row of columns -->
+<div ng-controller="mainController as main">
     <div class="row">
         <div class="col-md-5">
             <h3>Массовые аннотации</h3>
@@ -28,7 +27,9 @@
                         <img ng-src="{{playlist.snippet.thumbnails.medium.url}}">
                     </a>
                     <div class="caption">
-                        <h6 ng-bind="::playlist.snippet.title"></h6>
+                        <a ng-href="#/playlist/{{playlist.id}}">
+                            <span ng-bind="::playlist.snippet.title"></span>
+                        </a>
                     </div>
                 </div>
             </div>

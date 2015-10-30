@@ -27,6 +27,14 @@
                     callback && callback(response.items);
                 });
         };
+
+        this.getPlayListItems = function(playListId, callback) {
+            $http
+                .get(getBaseUrl('playlistItems') + '&part=contentDetails&maxResults=50&playlistId=' + playListId)
+                .success(function(response) {
+                    callback && callback(response.items);
+                });
+        };
     }
 
 }());

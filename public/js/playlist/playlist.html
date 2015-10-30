@@ -1,0 +1,23 @@
+<div ng-controller="playlistController as playlistCtrl">
+    <div ng-show="playlistCtrl.videos.length" class="ng-hide">
+        <hr>
+        <h5>Видео плейлиста</h5>
+        <div class="row">
+
+            <div ng-repeat="item in playlistCtrl.videos track by item.contentDetails.videoId" class="col-md-3">
+                <div class="thumbnail">
+                    <a ng-href="https://youtu.be/{{item.contentDetails.videoId}}" target="_blank">
+                        <img ng-src="https://i.ytimg.com/vi/{{item.contentDetails.videoId}}/mqdefault.jpg">
+                    </a>
+                    <div class="caption">
+                        <a ng-href="#">
+                            <span ng-bind="::item.contentDetails.videoId"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
