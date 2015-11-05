@@ -11,6 +11,15 @@
 
         youtube.getPlayListItems($routeParams.playlistId, function(videos) {
             vm.videos = videos;
+
+            var i = vm.videos.length;
+            while (i--) {
+                (function(i){
+                    youtube.getAnnotation(videos[i].contentDetails.videoId, function(response){
+                        vm.videos[i].annotations = response;
+                    });
+                }(i));
+            }
         });
     }
 }());

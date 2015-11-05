@@ -10,6 +10,11 @@
                         <img ng-src="https://i.ytimg.com/vi/{{item.contentDetails.videoId}}/mqdefault.jpg">
                     </a>
                     <div class="caption">
+                        <div>
+                            Аннотаций
+                            <span class="label" ng-bind="::item.annotations"
+                                  ng-class="{'label-success': item.annotations > 1, 'label-warning': 1 == item.annotations, 'label-danger': !item.annotations}"></span>
+                        </div>
                         <a ng-href="#">
                             <span ng-bind="::item.contentDetails.videoId"></span>
                         </a>

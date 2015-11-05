@@ -35,6 +35,13 @@
                     callback && callback(response.items);
                 });
         };
+
+        this.getAnnotation = function(videoId, callback) {
+            $http.get('/youtube/' + videoId)
+                .success(function(response) {
+                    callback && callback(response);
+                });
+        };
     }
 
 }());
