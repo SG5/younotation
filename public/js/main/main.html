@@ -23,12 +23,13 @@
 
             <div ng-repeat="playlist in main.playLists track by playlist.id" class="col-md-3">
                 <div class="thumbnail">
-                    <a ng-href="https://www.youtube.com/playlist?list={{playlist.id}}" target="_blank">
+                    <a ng-href="#/playlist/{{playlist.id}}">
                         <img ng-src="{{playlist.snippet.thumbnails.medium.url}}">
                     </a>
                     <div class="caption">
-                        <a ng-href="#/playlist/{{playlist.id}}">
+                        <a ng-href="https://www.youtube.com/playlist?list={{playlist.id}}" target="_blank">
                             <span ng-bind="::playlist.snippet.title"></span>
+                            <span class="fui-youtube"></span>
                         </a>
                     </div>
                 </div>
