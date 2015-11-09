@@ -8,6 +8,10 @@ angular.module('app').config(['$routeProvider', function($routeProvider) {
             templateUrl: 'js/playlist/playlist.html',
             controller: 'playlistController'
         })
+        .when('/video/:videoId', {
+            templateUrl: 'js/video/video.html',
+            controller: 'videoController'
+        })
         .when('/', {
             templateUrl: 'js/main/main.html',
             controller: 'mainController'
